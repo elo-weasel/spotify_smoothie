@@ -35,8 +35,8 @@ function base64encode(input){
 
 
 
-const clientId = '42f9ff4d66d345178a01cbc19861f1e9';
-const redirectUri = 'http://localhost:5173/callback';
+const clientId = 'f57e783900184c238b995175bd01b90a';
+const redirectUri = 'https://elo-weasel.github.io/spotify_smoothie/';
 const scope = 'user-top-read';
 const args = new URLSearchParams(window.location.search);
 const code = args.get("code");
