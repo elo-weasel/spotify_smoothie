@@ -257,8 +257,8 @@ function orderGenres(genres, genreCounter){
   console.log(genres[indices[2]]);
 
   //document.getElementById("genre1").innerText = genres[indices[0]];
-  document.getElementById("genre2").innerText = genres[indices[1]];
-  document.getElementById("genre3").innerText = genres[indices[2]];
+  //document.getElementById("genre2").innerText = genres[indices[1]];
+  //document.getElementById("genre3").innerText = genres[indices[2]];
 }
 
 
