@@ -6,7 +6,7 @@ sketch.setup = function(){
 }
 
 sketch.draw = function(){
-    background(200)
+    background(200);
     text(document.getElementById("genre1").innerText, width/2, height/2);
 }
 
