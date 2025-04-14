@@ -260,3 +260,17 @@ function orderGenres(genres, genreCounter){
   document.getElementById("genre2").innerText = genres[indices[1]];
   document.getElementById("genre3").innerText = genres[indices[2]];
 }
+
+
+function preload(){
+   
+}
+
+function setup() {
+    createCanvas(displayWidth, displayHeight);
+}
+
+
+function draw() {
+    background(200);
+}
