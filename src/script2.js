@@ -1,3 +1,4 @@
+//stuff for generating code challenge
 function generateRandomString(length){
   const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
   const values = crypto.getRandomValues(new Uint8Array(length));
@@ -39,6 +40,35 @@ const redirectUri = 'https://elo-weasel.github.io/spotify_smoothie/';
 const scope = 'user-top-read';
 const args = new URLSearchParams(window.location.search);
 const code = args.get("code");
+
+
+if(code){
+  //console.log(code);
+  await getToken(code);
+
+  //console.log(localStorage.getItem('access_token'));
+
+  const topArtists = await fetchTopArtists(localStorage.getItem('access_token'));
+  const topSongs = await fetchTopSongs(localStorage.getItem('access_token'));
+
+  //console.log(topArtists);
+  console.log(topSongs);
+
+  var artists = [];
+  var songs = [];
+
+  console.log(topArtists);
+  console.log("artists");
+  artists = sortArtists(topArtists);
+  console.log("songs");
+  songs = sortSongs(topSongs);
+
+  getGenres(topArtists);
+
+  populateUI(topSongs, topArtists);
+}else{
+  redirectToAuthCodeFlow();
+}
 
 
 //vars
@@ -226,53 +256,7 @@ function orderGenres(genres, genreCounter){
   console.log(genres[indices[1]]);
   console.log(genres[indices[2]]);
 
-  genres[indices[0]] = document.getElementById("genre1");
+  //document.getElementById("genre1").innerText = genres[indices[0]];
   //document.getElementById("genre2").innerText = genres[indices[1]];
   //document.getElementById("genre3").innerText = genres[indices[2]];
-}
-
-async function start(){
-  if(code){
-    //console.log(code);
-    getToken(code);
-
-    //console.log(localStorage.getItem('access_token'));
-
-    const topArtists =  fetchTopArtists(localStorage.getItem('access_token'));
-    const topSongs =  fetchTopSongs(localStorage.getItem('access_token'));
-
-    //console.log(topArtists);
-    console.log(topSongs);
-
-    var artists = [];
-    var songs = [];
-
-    console.log(topArtists);
-    console.log("artists");
-    artists = sortArtists(topArtists);
-    console.log("songs");
-    songs = sortSongs(topSongs);
-
-    getGenres(topArtists);
-
-    populateUI(topSongs, topArtists);
-  }else{
-    redirectToAuthCodeFlow();
-  }
-}
-
-
-
-function preload(){
-   //stuff for generating code challenge
-   start();
-}
-
-function setup() {
-    createCanvas(displayWidth, displayHeight);
-}
-
-
-function draw() {
-    background(200);
 }
