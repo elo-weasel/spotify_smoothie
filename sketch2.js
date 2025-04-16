@@ -5,11 +5,15 @@ function preload(){
 }
 
 function setup() {
-    createCanvas(displayWidth, displayHeight);
+    createCanvas(windowWidth, windowHeight);
 }
 
 
 function draw() {
     background(200);
+}
+
+function windowResized(){
+    resizeCanvas(windowWidth, windowHeight);
 }
     
