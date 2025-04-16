@@ -231,12 +231,7 @@ function orderGenres(genres, genreCounter){
   //document.getElementById("genre3").innerText = genres[indices[2]];
 }
 
-
-function preload(){
-   //stuff for generating code challenge
-
-
-
+async function start(){
   if(code){
     //console.log(code);
     getToken(code);
@@ -264,6 +259,13 @@ function preload(){
   }else{
     redirectToAuthCodeFlow();
   }
+}
+
+
+
+function preload(){
+   //stuff for generating code challenge
+   start();
 }
 
 function setup() {
