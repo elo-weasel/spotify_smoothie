@@ -145,7 +145,7 @@ async function fetchTopSongs(token) {
 function sortArtists(artists){
   var result = [];
 
-  for (let i = 0; i < 10; i++){
+  for (let i = 0; i < 45; i++){
     console.log(i+1 + ": " + artists.items[i].name);
     result.push(artists.items[i].name);
   }
