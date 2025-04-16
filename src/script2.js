@@ -172,10 +172,10 @@ function populateUI(songs, artists) {
   document.getElementById("artist2").innerText = artists.items[1].name;
   document.getElementById("artist3").innerText = artists.items[2].name;
 
-  //const genres = getGenres(artists);
-  //document.getElementById("genre1").innerText = genres[0];
-  //document.getElementById("genre2").innerText = genres[1];
-  //document.getElementById("genre3").innerText = genres[2];
+  const genres = getGenres(artists);
+  document.getElementById("genre1").innerText = genres[0];
+  document.getElementById("genre2").innerText = genres[1];
+  document.getElementById("genre3").innerText = genres[2];
 }
 
 function getGenres(topArtists){
