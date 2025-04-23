@@ -40,6 +40,7 @@ const redirectUri = 'https://elo-weasel.github.io/spotify_smoothie/';
 const scope = 'user-top-read';
 const args = new URLSearchParams(window.location.search);
 const code = args.get("code");
+const topGenres = [];
 
 
 if(code){
@@ -168,7 +169,7 @@ function populateUI(songs, artists, genres) {
   document.getElementById("song1").innerText = songs.items[0].name + ", " + songs.items[0].artists[0].name;
   document.getElementById("song2").innerText = songs.items[1].name + ", " + songs.items[1].artists[0].name;
   document.getElementById("song3").innerText = songs.items[2].name + ", " + songs.items[2].artists[0].name;
-  
+
   document.getElementById("artist1").innerText = artists.items[0].name;
   document.getElementById("artist2").innerText = artists.items[1].name;
   document.getElementById("artist3").innerText = artists.items[2].name;
@@ -227,7 +228,7 @@ function getGenres(topArtists){
 
   }
 
-  return orderGenres(genres, genreCounter);
+  orderGenres(genres, genreCounter);
 }
 
 
@@ -256,9 +257,13 @@ function orderGenres(genres, genreCounter){
   console.log(genres[indices[1]]);
   console.log(genres[indices[2]]);
 
+  topGenres.push(genres[indices[0]]);
+  topGenres.push(genres[indices[1]]);
+  topGenres.push(genres[indices[2]]);
+
   //document.getElementById("genre1").innerText = genres[indices[0]];
   //document.getElementById("genre2").innerText = genres[indices[1]];
   //document.getElementById("genre3").innerText = genres[indices[2]];
 
-  return [genres[indices[0]],genres[indices[1]],genres[indices[2]]];
+  
 }
