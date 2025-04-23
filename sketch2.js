@@ -12,6 +12,7 @@ function setup() {
 function draw() {
     background(200);
     text(windowWidth + ", " + windowHeight, 50,50);
+    text(document.getElementById("genre1").innerText, 100,100);
 }
 
 
