@@ -260,10 +260,4 @@ function orderGenres(genres, genreCounter){
   topGenres.push(genres[indices[0]]);
   topGenres.push(genres[indices[1]]);
   topGenres.push(genres[indices[2]]);
-
-  //document.getElementById("genre1").innerText = genres[indices[0]];
-  //document.getElementById("genre2").innerText = genres[indices[1]];
-  //document.getElementById("genre3").innerText = genres[indices[2]];
-
-  
 }
