@@ -12,7 +12,6 @@ function setup() {
 function draw() {
     background(200);
     text(windowWidth + ", " + windowHeight, 50,50);
-    console.log(document.getElementById("genre1").innerText);
     text(document.getElementById("song1").innerText, 100,100);
 }
 

@@ -65,7 +65,7 @@ if(code){
 
   getGenres(topArtists);
 
-  populateUI(topSongs, topArtists);
+  populateUI(topSongs, topArtists, getGenres);
 }else{
   redirectToAuthCodeFlow();
 }
@@ -164,7 +164,7 @@ function sortSongs(songs){
   return result;
 }
 
-function populateUI(songs, artists) {
+function populateUI(songs, artists, genres) {
   document.getElementById("song1").innerText = songs.items[0].name + ", " + songs.items[0].artists[0].name;
   document.getElementById("song2").innerText = songs.items[1].name + ", " + songs.items[1].artists[0].name;
   document.getElementById("song3").innerText = songs.items[2].name + ", " + songs.items[2].artists[0].name;
@@ -227,7 +227,7 @@ function getGenres(topArtists){
 
   }
 
-  orderGenres(genres, genreCounter);
+  return orderGenres(genres, genreCounter);
 }
 
 
@@ -259,4 +259,6 @@ function orderGenres(genres, genreCounter){
   //document.getElementById("genre1").innerText = genres[indices[0]];
   //document.getElementById("genre2").innerText = genres[indices[1]];
   //document.getElementById("genre3").innerText = genres[indices[2]];
+
+  return [genres[indices[0]],genres[indices[1]],genres[indices[2]]];
 }
