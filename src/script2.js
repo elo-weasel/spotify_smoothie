@@ -168,11 +168,11 @@ function populateUI(songs, artists, genres) {
   document.getElementById("song1").innerText = songs.items[0].name + ", " + songs.items[0].artists[0].name;
   document.getElementById("song2").innerText = songs.items[1].name + ", " + songs.items[1].artists[0].name;
   document.getElementById("song3").innerText = songs.items[2].name + ", " + songs.items[2].artists[0].name;
+  
   document.getElementById("artist1").innerText = artists.items[0].name;
   document.getElementById("artist2").innerText = artists.items[1].name;
   document.getElementById("artist3").innerText = artists.items[2].name;
 
-  const genres = getGenres(artists);
   document.getElementById("genre1").innerText = genres[0];
   document.getElementById("genre2").innerText = genres[1];
   document.getElementById("genre3").innerText = genres[2];
