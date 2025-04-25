@@ -187,8 +187,9 @@ function getGenres(topArtists){
   var genreCounter = [];
   var empty = [];
 
+  console.log(topArtists.items[0].genres.length);
+
   for(let i = 0; i < 45; i++){
-    console.log(topArtists.items[0].genres.length);
 
     //var item = topArtists.items[i];
       
