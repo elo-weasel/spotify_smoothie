@@ -1,17 +1,23 @@
 let gameState = 0;
 
+var background;
+
 function preload(){
-   
+    background = loadImage('background.png');
 }
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
     textAlign(CENTER, CENTER);
+
+    imageMode(CENTER);
 }
 
 
 function draw() {
     background(200);
+
+    image(background, windowWidth/2, windowHeight/2);
 
     if(gameState === 0){
         text("start", windowWidth/2, windowHeight*3/4);
